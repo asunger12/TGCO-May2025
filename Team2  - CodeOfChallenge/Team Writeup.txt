@@ -1,0 +1,26 @@
+Team 2
+
+Team Members: Apoorv Sunger, Gayatri Hampe
+
+Our approach is as follows:
+
+Safety Check:
+We implemented a function isSafe(x, y) that checks if a given coordinate is safe by calculating the sum of the digits of the product of the x and y values. If the sum is 19 or greater, the square is mined and considered unsafe.
+
+Breadth-First Search (BFS):
+To calculate the total number of reachable safe squares from a starting point (0, 0), we employed a Breadth-First Search (BFS) approach. BFS is ideal for this task because it explores all possible directions (up, down, left, right) level by level, ensuring we don't miss any safe squares within the search space.
+
+Grid Size Limitation:
+To optimize the BFS process, we restricted the search area to a defined grid size (e.g., within a 100x100 range) rather than allowing the algorithm to search infinitely. This greatly reduced computation time and prevented the BFS from becoming inefficient.
+
+Shortest Path Algorithm:
+For the shortest safe path between two points, we again used BFS. BFS inherently guarantees the shortest path in an unweighted grid. By keeping track of visited nodes and the number of steps taken, we could efficiently find the minimum number of steps between the starting and destination points. If no safe path existed, we returned -1.
+
+Optimizations:
+
+We used a visited set to ensure that we don't revisit coordinates, which helped avoid unnecessary calculations and infinite loops.
+
+To handle edge cases where coordinates were outside the grid or mined, we added quick checks before proceeding with BFS expansion.
+
+Creative Twist:
+We added a special feature where the robot can move to any coordinate as long as it's safe, even across negative coordinate axes, which adds flexibility to the movement mechanics.
